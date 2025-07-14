@@ -18,5 +18,6 @@ go build .
 ![screenshot-1](https://github.com/harisahmed05/gosh/blob/main/screenshots/1.png)
 
 ## Upcoming features / Plans
+- Tab autocompletion for built-in commands, external commands, and file paths.
 - Supporting more built-in commands
 - Using Goroutine for efficient shell experiences
