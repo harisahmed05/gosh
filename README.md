@@ -19,5 +19,6 @@ go build .
 
 ## Upcoming features / Plans
 - Tab autocompletion for built-in commands, external commands, and file paths.
+- Adding ability to support piping 
 - Supporting more built-in commands
 - Using Goroutine for efficient shell experiences
