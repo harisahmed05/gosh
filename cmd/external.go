@@ -9,7 +9,7 @@ import (
 func Execute(input string) error {
 	// Removing newline character
 	input = strings.TrimSuffix(input, "\n")
-	args := strings.Split(input, " ")
+	args := strings.Fields(input)
 
 	// Checking for built-in commands
 	err, flag := executeBuiltIn(args)
