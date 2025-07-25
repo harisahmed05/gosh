@@ -21,9 +21,6 @@ jobs:
     - name: Build for Linux
       run: GOOS=linux GOARCH=amd64 go build -o gosh-linux-amd64
 
-    - name: Build for Windows
-      run: GOOS=windows GOARCH=amd64 go build -o gosh-windows-amd64.exe
-
     - name: Build for macOS
       run: GOOS=darwin GOARCH=amd64 go build -o gosh-darwin-amd64
 
@@ -33,7 +30,6 @@ jobs:
         name: binaries
         path: |
           gosh-linux-amd64
-          gosh-windows-amd64.exe
           gosh-darwin-amd64
 
   release:
@@ -66,17 +62,6 @@ jobs:
           asset_path: ./gosh-linux-amd64
           asset_name: gosh-linux-amd64
           asset_content_type: application/octet-stream
-
-      - name: Upload Windows Binary
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./gosh-windows-amd64.exe
-          asset_name: gosh-windows-amd64.exe
-          asset_content_type: application/octet-stream
-
       - name: Upload macOS Binary
         uses: actions/upload-release-asset@v1
         env:
