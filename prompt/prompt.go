@@ -8,6 +8,17 @@ import (
 	"strings"
 )
 
+// ANSI color codes
+const (
+	Reset  = "\033[0m"
+	Red    = "\033[31m"
+	Green  = "\033[32m"
+	Yellow = "\033[33m"
+	Blue   = "\033[34m"
+	Purple = "\033[35m"
+	Cyan   = "\033[36m"
+)
+
 func InitUser() (*models.User, error) {
 	var usr models.User
 
@@ -37,7 +48,7 @@ func InitUser() (*models.User, error) {
 func Show(usr *models.User, flag bool) {
 	if flag && usr != nil {
 		BetterPwd(usr)
-		fmt.Printf("%v@%v:%v ->", usr.Username, usr.Hostname, usr.Pwd)
+		fmt.Printf("%s%v@%v%s:%s%v%s ->", Green, usr.Username, usr.Hostname, Reset, Blue, usr.Pwd, Reset)
 	} else {
 		fmt.Print("->")
 	}
