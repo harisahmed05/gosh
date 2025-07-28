@@ -2,10 +2,11 @@ package prompt
 
 import (
 	"fmt"
-	"gosh/models"
 	"os"
 	"os/user"
 	"strings"
+
+	"github.com/harisahmed05/gosh/models"
 )
 
 // ANSI color codes

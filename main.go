@@ -3,9 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"gosh/cmd"
-	"gosh/prompt"
 	"os"
+
+	"github.com/harisahmed05/gosh/cmd"
+	"github.com/harisahmed05/gosh/prompt"
 )
 
 func main() {
